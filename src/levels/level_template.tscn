@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://du223uxastgd2"]
+[gd_scene load_steps=4 format=3 uid="uid://du223uxastgd2"]
+
+[ext_resource type="Texture2D" uid="uid://fb8fv80fba0d" path="res://assets/tiles/tempTiles.png" id="1_3fgrd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_txiyn"]
+texture = ExtResource("1_3fgrd")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_d8bjs"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_txiyn")
 
 [node name="LevelTemplate" type="Node2D"]
 
