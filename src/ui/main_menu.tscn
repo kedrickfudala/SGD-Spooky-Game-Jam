@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bphhjma6usrxi"]
+
+[ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_54da5"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54da5")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 232.0
+offset_right = 413.0
+offset_bottom = 263.0
+text = "play"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 310.0
+offset_right = 417.0
+offset_bottom = 341.0
+text = "quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 109.0
+offset_right = 484.0
+offset_bottom = 132.0
+text = "Spooky Game Trick"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
