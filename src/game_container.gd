@@ -5,8 +5,8 @@ class_name GameContainer
 @onready var world : PackedScene = preload("res://src/levels/world.tscn")
 
 func _ready():
-	spawn_main_menu()
-	
+	spawn_world()
+
 func spawn_main_menu():
 	var main_menu_inst = main_menu.instantiate()
 	main_menu_inst.global_position = Vector2(0,0)

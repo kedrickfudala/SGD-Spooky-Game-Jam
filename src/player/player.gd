@@ -17,10 +17,10 @@ func handle_input():
 	if is_on_floor():
 		jumps = 2
 	if Input.is_action_just_pressed("jump") and jumps > 0:
-		velocity.y -= 300
+		velocity.y = -200
 		jumps -= 1
 
 func handle_movement():
-	velocity.x += 5
+	velocity.x = 50
 	velocity.y += 9.8
 	move_and_slide()
