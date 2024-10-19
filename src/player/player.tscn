@@ -7,7 +7,7 @@
 size = Vector2(32, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b56kg"]
-radius = 34.5057
+radius = 42.3868
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfnit"]
 radius = 15.0333
@@ -46,3 +46,6 @@ shape = SubResource("CircleShape2D_sfnit")
 offset = Vector2(150, -50)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

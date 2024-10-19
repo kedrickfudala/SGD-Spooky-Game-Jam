@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bv0jdyu1kanpc"]
+[gd_scene load_steps=2 format=3 uid="uid://bv0jdyu1kanpc"]
+
+[ext_resource type="Script" path="res://src/ui/player_hud.gd" id="1_oxxxk"]
 
 [node name="PlayerHud" type="CanvasLayer"]
+script = ExtResource("1_oxxxk")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 72.0
