@@ -6,25 +6,26 @@ class_name Player
 @onready var player_hud : PackedScene = preload("res://src/ui/player_hud.tscn")
 @onready var player_hud_inst : Object = null
 
+@onready var camera : Object = $Camera2D
 @onready var animation_player : Object = $AnimationPlayer
 @onready var combo_timer : Object = $ComboTimer
 
 @onready var score : int = 0
-@onready var combo : float = 0.0
 
 @onready var jumps : int = 2
 
 func _ready():
 	spawn_player_hud()
+	combo_timer.set_wait_time(5)
+	combo_timer.start()
 	
 func _physics_process(_delta: float) -> void:
-	if player_hud_inst:
-		player_hud_inst.score_label.text = str("Score: ") + str(score)
-		player_hud_inst.combo_label.text = str("Combo: ") + str(combo)
-	handle_input()
-	handle_movement()
-	
-	print(global_position)
+	if world.game_start:
+		if player_hud_inst:
+			player_hud_inst.score_label.text = str("Score: ") + str(score)
+			player_hud_inst.combo_label.text = str("Combo Timer: ") + str(snapped(combo_timer.time_left, 0.1))
+		handle_input()
+		handle_movement()
 
 func handle_input():
 	if is_on_floor():
@@ -40,3 +41,11 @@ func handle_movement():
 func spawn_player_hud():
 	player_hud_inst = player_hud.instantiate()
 	add_child(player_hud_inst)
+
+func _on_combo_timer_timeout() -> void:
+	world.game_over()
+
+func _on_combo_area_area_entered(area: Area2D) -> void:
+	var object = area.get_parent()
+	score += object.score_value
+	combo_timer.start(combo_timer.time_left + object.time_value)

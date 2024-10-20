@@ -11,6 +11,7 @@ radius = 42.3868
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+slide_on_ceiling = false
 floor_constant_speed = true
 script = ExtResource("1_bwpes")
 
@@ -37,3 +38,6 @@ position_smoothing_speed = 3.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="ComboTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="ComboArea" to="." method="_on_combo_area_area_entered"]
+[connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]

@@ -10,6 +10,8 @@ size = Vector2(12, 16)
 size = Vector2(12, 4)
 
 [node name="ComboHydrant" instance=ExtResource("1_jsld0")]
+score_value = 50
+time_value = 5.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_cbse8")

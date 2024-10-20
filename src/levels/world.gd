@@ -4,8 +4,6 @@ class_name World
 @onready var player : PackedScene = preload("res://src/player/player.tscn")
 @onready var player_inst : Object = null
 
-@onready var audio_player : Object = $AudioStreamPlayer2D
-
 @onready var game_start : bool = false
 
 @onready var level_0 : PackedScene = preload("res://src/levels/level_0.tscn")
@@ -22,10 +20,10 @@ class_name World
 @onready var speed : float = 2.5
 
 func _ready():
-	audio_player.play()
 	spawn_player()
 	spawn_level(0, 0)
-	spawn_random_level(1 * 512)
+	#spawn_random_level(1 * 512)
+	spawn_level(2, 1 * 512)
 	spawn_random_level(2 * 512)
 	game_start = true
 
@@ -50,5 +48,10 @@ func spawn_level(id : int, x_offset : int):
 func spawn_random_level(x_offset : int):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var num = rng.randi_range(0, len(level_segments) - 1)
+	var num = rng.randi_range(1, len(level_segments) - 1)
 	spawn_level(num, x_offset)
+
+func game_over():
+	print("game over")
+	game_start = false
+	get_parent().spawn_gameover()
