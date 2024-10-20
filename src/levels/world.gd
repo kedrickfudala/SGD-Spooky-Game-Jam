@@ -8,8 +8,9 @@ class_name World
 @onready var level_counter : int = 0
 
 @onready var level_0 : PackedScene = preload("res://src/levels/level_0.tscn")
+@onready var level_1 : PackedScene = preload("res://src/levels/level_1.tscn")
 
-@onready var map_segments = [level_0]
+@onready var map_segments = [level_0,level_1]
 
 @onready var speed : float = 6
 
