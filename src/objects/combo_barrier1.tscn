@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://16t5m70xc874"]
+
+[ext_resource type="PackedScene" uid="uid://bvrddrd1ek6ad" path="res://src/objects/combo_object.tscn" id="1_xpmrx"]
+[ext_resource type="Texture2D" uid="uid://dxuy644rfcgns" path="res://assets/sprites/combo objects/barrier1.png" id="2_hjs54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4drwo"]
+size = Vector2(13, 4)
+
+[node name="ComboBarrier1" instance=ExtResource("1_xpmrx")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_hjs54")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-4, -8, 8, -8, 8, 8, -8, 8, -8, 8, -7, 3)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(2, -10)
+shape = SubResource("RectangleShape2D_4drwo")

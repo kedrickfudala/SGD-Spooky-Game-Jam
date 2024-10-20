@@ -8,7 +8,7 @@ script = ExtResource("1_7rpjb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

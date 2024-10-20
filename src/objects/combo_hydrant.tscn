@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhc2odtmne1i2"]
+[gd_scene load_steps=4 format=3 uid="uid://bhc2odtmne1i2"]
 
 [ext_resource type="PackedScene" uid="uid://bvrddrd1ek6ad" path="res://src/objects/combo_object.tscn" id="1_jsld0"]
 [ext_resource type="Texture2D" uid="uid://chd80pcy0e3ub" path="res://assets/sprites/combo objects/hydrant.png" id="2_cbse8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wym1q"]
-size = Vector2(12, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eks34"]
-size = Vector2(12, 4)
+size = Vector2(8, 3)
 
 [node name="ComboHydrant" instance=ExtResource("1_jsld0")]
 score_value = 50
@@ -16,9 +13,9 @@ time_value = 5.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_cbse8")
 
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("RectangleShape2D_wym1q")
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-4, -4, 0, -7, 4, -4, 3, 8, -3, 8)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, -10)
+position = Vector2(0, -8.5)
 shape = SubResource("RectangleShape2D_eks34")

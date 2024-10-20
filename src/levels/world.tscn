@@ -13,6 +13,6 @@ scroll_base_scale = Vector2(0.45, 0.45)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(1111, 224)
-scale = Vector2(9.17, 9.17)
+position = Vector2(388.24, 144.5)
+scale = Vector2(5.17969, 5.17969)
 texture = ExtResource("2_nyh8e")

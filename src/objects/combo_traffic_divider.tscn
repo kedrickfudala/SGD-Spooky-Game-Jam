@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbt1ol58velns"]
+
+[ext_resource type="PackedScene" uid="uid://bvrddrd1ek6ad" path="res://src/objects/combo_object.tscn" id="1_urbb3"]
+[ext_resource type="Texture2D" uid="uid://di7gvap16xb76" path="res://assets/sprites/combo objects/construction.png" id="2_fidkr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx1ya"]
+size = Vector2(32, 6)
+
+[node name="ComboTrafficDivider" instance=ExtResource("1_urbb3")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(16, -24)
+texture = ExtResource("2_fidkr")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-16, -8, 16, -8, 16, 8, -16, 8)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_jx1ya")

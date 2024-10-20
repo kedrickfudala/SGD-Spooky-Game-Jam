@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://du223uxastgd2"]
+[gd_scene load_steps=13 format=4 uid="uid://du223uxastgd2"]
 
 [ext_resource type="Texture2D" uid="uid://fb8fv80fba0d" path="res://assets/tiles/tempTiles.png" id="1_3fgrd"]
 [ext_resource type="Script" path="res://src/levels/level_template.gd" id="1_y5inb"]
 [ext_resource type="Texture2D" uid="uid://i4tqhofj7328" path="res://assets/tiles/TrickGameJamTileset.png" id="3_nu6l5"]
+[ext_resource type="PackedScene" uid="uid://16t5m70xc874" path="res://src/objects/combo_barrier1.tscn" id="4_yradr"]
 [ext_resource type="PackedScene" uid="uid://bhc2odtmne1i2" path="res://src/objects/combo_hydrant.tscn" id="5_akjpi"]
+[ext_resource type="PackedScene" uid="uid://dukkw2fynpef3" path="res://src/objects/combo_barrier2.tscn" id="5_gdfvg"]
+[ext_resource type="PackedScene" uid="uid://c36b6jaruh38m" path="res://src/objects/combo_chimney.tscn" id="7_2tiii"]
+[ext_resource type="PackedScene" uid="uid://evauj3p278os" path="res://src/objects/combo_tall_tomb.tscn" id="8_hu621"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_txiyn"]
 texture = ExtResource("1_3fgrd")
@@ -121,7 +125,11 @@ texture = ExtResource("3_nu6l5")
 9:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ea7c7"]
+scenes/1/scene = ExtResource("4_yradr")
+scenes/2/scene = ExtResource("5_gdfvg")
 scenes/3/scene = ExtResource("5_akjpi")
+scenes/6/scene = ExtResource("7_2tiii")
+scenes/7/scene = ExtResource("8_hu621")
 
 [sub_resource type="TileSet" id="TileSet_d8bjs"]
 physics_layer_0/collision_layer = 1

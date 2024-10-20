@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4oaxso5dgkle"]
+
+[ext_resource type="PackedScene" uid="uid://bvrddrd1ek6ad" path="res://src/objects/combo_object.tscn" id="1_2us6r"]
+[ext_resource type="Texture2D" uid="uid://bv8esmebwkp4j" path="res://assets/sprites/combo objects/yellowblackrail2.png" id="2_g3u32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1u4o"]
+size = Vector2(16, 4.5)
+
+[node name="ComboTrafficRail2" instance=ExtResource("1_2us6r")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_g3u32")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -10.25)
+shape = SubResource("RectangleShape2D_m1u4o")

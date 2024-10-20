@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq6snv2g3q551"]
+
+[ext_resource type="PackedScene" uid="uid://bvrddrd1ek6ad" path="res://src/objects/combo_object.tscn" id="1_ll0wp"]
+[ext_resource type="Texture2D" uid="uid://hpdwg748mbix" path="res://assets/sprites/combo objects/cone.png" id="2_kwkyo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04gi1"]
+size = Vector2(8, 7)
+
+[node name="ComboTrafficCone" instance=ExtResource("1_ll0wp")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_kwkyo")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-5, 8, 5, 8, 2, -2, -2, -2)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_04gi1")
