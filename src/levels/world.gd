@@ -7,12 +7,19 @@ class_name World
 @onready var game_start : bool = false
 @onready var level_counter : int = 0
 
+
 @onready var level_0 : PackedScene = preload("res://src/levels/level_0.tscn")
 @onready var level_1 : PackedScene = preload("res://src/levels/level_1.tscn")
+@onready var level_2 : PackedScene = preload("res://src/levels/level_2.tscn")
+@onready var level_3 : PackedScene = preload("res://src/levels/level_3.tscn")
+@onready var level_4 : PackedScene = preload("res://src/levels/level_4.tscn")
+@onready var level_5 : PackedScene = preload("res://src/levels/level_5.tscn")
+@onready var level_6 : PackedScene = preload("res://src/levels/level_6.tscn")
 
-@onready var map_segments = [level_0,level_1]
 
-@onready var speed : float = 6
+@onready var map_segments = [level_0,level_1,level_2,level_3,level_4,level_5,level_6]
+
+@onready var speed : float = 2.5
 
 func _ready():
 	spawn_player()
@@ -22,7 +29,7 @@ func _ready():
 	game_start = true
 
 func _physics_process(delta: float) -> void:
-	speed += 0.002
+	speed += 0.0002
 	print(speed)
 
 func spawn_player():

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c44ghcsj1xt1v"]
+[gd_scene load_steps=7 format=3 uid="uid://c44ghcsj1xt1v"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_bwpes"]
-[ext_resource type="Texture2D" uid="uid://fb8fv80fba0d" path="res://assets/tiles/tempTiles.png" id="2_o31wy"]
+[ext_resource type="Texture2D" uid="uid://cbxpop55cp004" path="res://assets/democat.png" id="2_mg7mj"]
+[ext_resource type="AudioStream" uid="uid://j37terf06gpf" path="res://assets/gamejam trick.mp3" id="3_ioe20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahx2h"]
-size = Vector2(32, 30)
+size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b56kg"]
 radius = 42.3868
@@ -18,14 +19,9 @@ floor_constant_speed = true
 script = ExtResource("1_bwpes")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 14)
-scale = Vector2(1, 1.875)
-texture = ExtResource("2_o31wy")
-hframes = 4
-vframes = 4
+texture = ExtResource("2_mg7mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ahx2h")
 
 [node name="ComboArea" type="Area2D" parent="."]
@@ -33,7 +29,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComboArea"]
-position = Vector2(0.625, 0)
+scale = Vector2(0.76, 0.76)
 shape = SubResource("CircleShape2D_b56kg")
 
 [node name="PickupArea" type="Area2D" parent="."]
@@ -44,9 +40,13 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_sfnit")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(150, -50)
-zoom = Vector2(2.5, 2.5)
+offset = Vector2(90, -30)
+zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ioe20")
+parameters/looping = false
