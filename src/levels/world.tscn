@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ogrr1lot1qwv"]
+[gd_scene load_steps=3 format=3 uid="uid://ogrr1lot1qwv"]
 
 [ext_resource type="Script" path="res://src/levels/world.gd" id="1_qjygf"]
+[ext_resource type="Texture2D" uid="uid://h7yd4q2v4gwa" path="res://icon.svg" id="2_euldp"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_qjygf")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2(0.45, 0.45)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(8887, -5904)
+scale = Vector2(287.816, 99.207)
+texture = ExtResource("2_euldp")

@@ -3,40 +3,50 @@
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_bwpes"]
 [ext_resource type="Texture2D" uid="uid://fb8fv80fba0d" path="res://assets/tiles/tempTiles.png" id="2_o31wy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6cxix"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahx2h"]
+size = Vector2(32, 30)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_swdcw"]
-size = Vector2(29.5, 28)
+[sub_resource type="CircleShape2D" id="CircleShape2D_b56kg"]
+radius = 42.3868
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ywuhm"]
-radius = 14.8661
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfnit"]
+radius = 15.0333
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+floor_constant_speed = true
 script = ExtResource("1_bwpes")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 14)
+scale = Vector2(1, 1.875)
 texture = ExtResource("2_o31wy")
-hframes = 8
-vframes = 8
+hframes = 4
+vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6cxix")
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ahx2h")
 
 [node name="ComboArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComboArea"]
-shape = SubResource("RectangleShape2D_swdcw")
+position = Vector2(0.625, 0)
+shape = SubResource("CircleShape2D_b56kg")
 
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-shape = SubResource("CircleShape2D_ywuhm")
+shape = SubResource("CircleShape2D_sfnit")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+offset = Vector2(150, -50)
+zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
