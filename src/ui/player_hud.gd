@@ -1,4 +1,5 @@
 extends CanvasLayer
 class_name PlayerHud
 
-@onready var label : Object = $Label
+@onready var score_label : Object = $ScoreLabel
+@onready var combo_label : Object = $ComboLabel

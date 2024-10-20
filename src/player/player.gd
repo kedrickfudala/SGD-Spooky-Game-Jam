@@ -18,7 +18,8 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	if player_hud_inst:
-		player_hud_inst.label.text = str("Score: ") + str(score)
+		player_hud_inst.score_label.text = str("Score: ") + str(score)
+		player_hud_inst.combo_label.text = str("Combo: ") + str(combo)
 	handle_input()
 	handle_movement()
 
