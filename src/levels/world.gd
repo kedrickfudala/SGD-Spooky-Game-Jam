@@ -5,13 +5,12 @@ class_name World
 @onready var player_inst : Object = null
 
 @onready var game_start : bool = false
-@onready var level_counter : int = 0
 
 @onready var level_0 : PackedScene = preload("res://src/levels/level_0.tscn")
 
 @onready var map_segments = [level_0]
 
-@onready var speed : float = 6
+@onready var speed : float = 2
 
 func _ready():
 	spawn_player()
@@ -35,7 +34,7 @@ func spawn_level(id : int, x_offset : int):
 		level_inst.global_position = Vector2(x_offset,0)
 		#call_deferred("add_child", level_inst)
 		add_child(level_inst)
-		level_counter += 1
+		return level_inst
 	else:
 		print("ERROR: Player inst does not exist")
 	

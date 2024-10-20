@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://du223uxastgd2"]
+[gd_scene load_steps=7 format=4 uid="uid://du223uxastgd2"]
 
 [ext_resource type="Texture2D" uid="uid://fb8fv80fba0d" path="res://assets/tiles/tempTiles.png" id="1_3fgrd"]
 [ext_resource type="Script" path="res://src/levels/level_template.gd" id="1_y5inb"]
+[ext_resource type="Texture2D" uid="uid://cyuu2gmhuawfa" path="res://assets/tiles/TileSet.png" id="3_efgct"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_txiyn"]
 texture = ExtResource("1_3fgrd")
@@ -17,10 +18,38 @@ texture = ExtResource("1_3fgrd")
 1:2/0 = 0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -24, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohqck"]
+texture = ExtResource("3_efgct")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/0 = 0
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+4:2/size_in_atlas = Vector2i(2, 2)
+4:2/0 = 0
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+1:4/0 = 0
+0:4/0 = 0
+0:5/size_in_atlas = Vector2i(1, 2)
+0:5/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+5:4/size_in_atlas = Vector2i(1, 4)
+5:4/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_d8bjs"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_txiyn")
+sources/1 = SubResource("TileSetAtlasSource_ohqck")
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource("1_y5inb")
