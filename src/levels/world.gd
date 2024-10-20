@@ -8,7 +8,8 @@ class_name World
 
 @onready var level_0 : PackedScene = preload("res://src/levels/level_0.tscn")
 
-@onready var map_segments = [level_0]
+@onready var level_insts = []
+@onready var level_segments = [level_0]
 
 @onready var speed : float = 2
 
@@ -30,9 +31,8 @@ func spawn_player():
 
 func spawn_level(id : int, x_offset : int):
 	if player_inst:
-		var level_inst = map_segments[id].instantiate()
+		var level_inst = level_segments[id].instantiate()
 		level_inst.global_position = Vector2(x_offset,0)
-		#call_deferred("add_child", level_inst)
 		add_child(level_inst)
 		return level_inst
 	else:
@@ -41,5 +41,5 @@ func spawn_level(id : int, x_offset : int):
 func spawn_random_level(x_offset):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var num = rng.randi_range(0, len(map_segments) - 1)
+	var num = rng.randi_range(0, len(level_segments) - 1)
 	spawn_level(num, x_offset)
