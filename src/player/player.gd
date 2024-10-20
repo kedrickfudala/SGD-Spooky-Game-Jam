@@ -7,6 +7,7 @@ class_name Player
 @onready var player_hud_inst : Object = null
 
 @onready var animation_player : Object = $AnimationPlayer
+@onready var combo_timer : Object = $ComboTimer
 
 @onready var score : int = 0
 @onready var combo : float = 0.0
@@ -16,12 +17,14 @@ class_name Player
 func _ready():
 	spawn_player_hud()
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if player_hud_inst:
 		player_hud_inst.score_label.text = str("Score: ") + str(score)
 		player_hud_inst.combo_label.text = str("Combo: ") + str(combo)
 	handle_input()
 	handle_movement()
+	
+	print(global_position)
 
 func handle_input():
 	if is_on_floor():

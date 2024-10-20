@@ -1,17 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c44ghcsj1xt1v"]
+[gd_scene load_steps=5 format=3 uid="uid://c44ghcsj1xt1v"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_bwpes"]
-[ext_resource type="Texture2D" uid="uid://cbxpop55cp004" path="res://assets/democat.png" id="2_mg7mj"]
-[ext_resource type="AudioStream" uid="uid://j37terf06gpf" path="res://assets/gamejam trick.mp3" id="3_ioe20"]
+[ext_resource type="Texture2D" uid="uid://cbxpop55cp004" path="res://assets/sprites/democat.png" id="2_mg7mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahx2h"]
 size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b56kg"]
 radius = 42.3868
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_sfnit"]
-radius = 15.0333
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -32,21 +28,12 @@ collision_mask = 4
 scale = Vector2(0.76, 0.76)
 shape = SubResource("CircleShape2D_b56kg")
 
-[node name="PickupArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-shape = SubResource("CircleShape2D_sfnit")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(90, -30)
 zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
-position_smoothing_speed = 2.0
+position_smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ioe20")
-parameters/looping = false
+[node name="ComboTimer" type="Timer" parent="."]

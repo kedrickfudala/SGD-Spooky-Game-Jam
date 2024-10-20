@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvrddrd1ek6ad"]
+
+[ext_resource type="Script" path="res://src/objects/combo_object.gd" id="1_7rpjb"]
+
+[node name="ComboObject" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_7rpjb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bphhjma6usrxi"]
+[gd_scene load_steps=3 format=3 uid="uid://bphhjma6usrxi"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_54da5"]
+[ext_resource type="Texture2D" uid="uid://d0w7usunxm22b" path="res://assets/backgrounds/background_for_spooky_game_jamWHOLE.png" id="2_c1u4f"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,28 +12,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_54da5")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 793.0
+texture = ExtResource("2_c1u4f")
+
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 372.0
-offset_top = 232.0
-offset_right = 413.0
-offset_bottom = 263.0
-text = "play"
+offset_left = 455.0
+offset_top = 245.0
+offset_right = 704.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 378.0
-offset_top = 310.0
-offset_right = 417.0
-offset_bottom = 341.0
-text = "quit"
+offset_left = 455.0
+offset_top = 360.0
+offset_right = 706.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 109.0
-offset_right = 484.0
-offset_bottom = 132.0
+offset_left = 356.0
+offset_top = 89.0
+offset_right = 816.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 50
 text = "Spooky Game Trick"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
