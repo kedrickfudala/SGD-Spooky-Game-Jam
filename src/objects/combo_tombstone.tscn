@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://kv2sxfck4d6t" path="res://assets/sprites/combo objects/tombstone_1.png" id="2_3pqmw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gf3h"]
-size = Vector2(12, 4)
+size = Vector2(8, 2)
 
 [node name="ComboTombstone" instance=ExtResource("1_j5yva")]
+score_value = 60
+time_value = 3.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_3pqmw")
@@ -15,5 +17,5 @@ texture = ExtResource("2_3pqmw")
 polygon = PackedVector2Array(-6, 8, 6, 8, 6, -5, 4, -8, -4, -8, -6, -5)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, -10)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_8gf3h")

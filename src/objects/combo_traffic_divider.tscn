@@ -4,9 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://di7gvap16xb76" path="res://assets/sprites/combo objects/construction.png" id="2_fidkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx1ya"]
-size = Vector2(32, 6)
+size = Vector2(27, 2)
 
 [node name="ComboTrafficDivider" instance=ExtResource("1_urbb3")]
+position = Vector2(8, 0)
+score_value = 40
+time_value = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(16, -24)
@@ -16,5 +19,5 @@ texture = ExtResource("2_fidkr")
 polygon = PackedVector2Array(-16, -8, 16, -8, 16, 8, -16, 8)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, -11)
+position = Vector2(2.5, -9)
 shape = SubResource("RectangleShape2D_jx1ya")

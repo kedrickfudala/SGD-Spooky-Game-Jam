@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dxuy644rfcgns" path="res://assets/sprites/combo objects/barrier1.png" id="2_hjs54"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4drwo"]
-size = Vector2(13, 4)
+size = Vector2(11, 1)
 
 [node name="ComboBarrier1" instance=ExtResource("1_xpmrx")]
+score_value = 40
+time_value = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_hjs54")
@@ -15,5 +17,5 @@ texture = ExtResource("2_hjs54")
 polygon = PackedVector2Array(-4, -8, 8, -8, 8, 8, -8, 8, -8, 8, -7, 3)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(2, -10)
+position = Vector2(2.5, -8.5)
 shape = SubResource("RectangleShape2D_4drwo")

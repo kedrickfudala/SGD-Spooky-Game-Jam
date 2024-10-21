@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chd80pcy0e3ub" path="res://assets/sprites/combo objects/hydrant.png" id="2_cbse8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eks34"]
-size = Vector2(8, 3)
+size = Vector2(6, 3)
 
 [node name="ComboHydrant" instance=ExtResource("1_jsld0")]
 score_value = 50

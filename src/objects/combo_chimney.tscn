@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://c0xioufqfnht2" path="res://assets/sprites/combo objects/chimney.png" id="2_ie7l2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pxh0"]
-size = Vector2(8, 3)
+size = Vector2(8, 1)
 
 [node name="ComboChimney" instance=ExtResource("1_wwppn")]
+score_value = 70
+time_value = 6.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_ie7l2")
@@ -15,5 +17,5 @@ texture = ExtResource("2_ie7l2")
 polygon = PackedVector2Array(-2, 0, 6, 0, 5, 8, -1, 8)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(2, -1.5)
+position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_0pxh0")

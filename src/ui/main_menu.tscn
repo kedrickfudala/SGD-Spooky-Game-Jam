@@ -39,11 +39,35 @@ text = "Quit"
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 356.0
-offset_top = 89.0
+offset_top = 137.0
 offset_right = 816.0
-offset_bottom = 158.0
+offset_bottom = 206.0
 theme_override_font_sizes/font_size = 50
-text = "Spooky Game Trick"
+text = "Ollie's Halloween"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 391.0
+offset_right = 557.0
+offset_bottom = 532.0
+scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/font_size = 50
+text = "Kedrick Fudala 
+Catherine Xu"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 366.0
+offset_right = 1334.0
+offset_bottom = 579.0
+scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/font_size = 50
+text = "Aissatou Barry
+Irene Si
+Mike Villanueva Najarro"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

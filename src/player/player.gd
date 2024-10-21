@@ -8,6 +8,8 @@ class_name Player
 
 @onready var camera : Object = $Camera2D
 @onready var animation_player : Object = $AnimationPlayer
+@onready var sfx_jump: AudioStreamPlayer = $SFX_Jump
+@onready var sfx_score: AudioStreamPlayer = $SFX_Score
 @onready var combo_timer : Object = $ComboTimer
 
 @onready var score : int = 0
@@ -18,6 +20,7 @@ func _ready():
 	spawn_player_hud()
 	combo_timer.set_wait_time(5)
 	combo_timer.start()
+	animation_player.play("cat_skating")
 	
 func _physics_process(_delta: float) -> void:
 	if world.game_start:
@@ -30,7 +33,10 @@ func _physics_process(_delta: float) -> void:
 func handle_input():
 	if is_on_floor():
 		jumps = 2
+		animation_player.play("cat_skating")
 	if Input.is_action_just_pressed("jump") and jumps > 0:
+		sfx_jump.play()
+		animation_player.play("cat_jump")
 		velocity.y = -250
 		jumps -= 1
 
@@ -49,3 +55,4 @@ func _on_combo_area_area_entered(area: Area2D) -> void:
 	var object = area.get_parent()
 	score += object.score_value
 	combo_timer.start(combo_timer.time_left + object.time_value)
+	sfx_score.play()

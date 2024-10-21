@@ -13,9 +13,12 @@ class_name World
 @onready var level_4 : PackedScene = preload("res://src/levels/level_4.tscn")
 @onready var level_5 : PackedScene = preload("res://src/levels/level_5.tscn")
 @onready var level_6 : PackedScene = preload("res://src/levels/level_6.tscn")
+@onready var level_7 : PackedScene = preload("res://src/levels/level_7.tscn")
+@onready var level_8 : PackedScene = preload("res://src/levels/level_8.tscn")
+@onready var level_9 : PackedScene = preload("res://src/levels/level_9.tscn")
 
 @onready var level_insts = []
-@onready var level_segments = [level_0,level_1,level_2,level_3,level_4,level_5,level_6]
+@onready var level_segments = [level_0,level_1,level_2,level_3,level_4,level_5,level_6,level_7,level_8,level_9]
 
 @onready var speed : float = 2.5
 

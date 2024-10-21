@@ -1,13 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://c44ghcsj1xt1v"]
+[gd_scene load_steps=11 format=3 uid="uid://c44ghcsj1xt1v"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_bwpes"]
-[ext_resource type="Texture2D" uid="uid://cbxpop55cp004" path="res://assets/sprites/democat.png" id="2_mg7mj"]
+[ext_resource type="Texture2D" uid="uid://balp5mt8p7y4g" path="res://assets/sprites/catjumpsheet.png" id="2_hmyn6"]
+[ext_resource type="AudioStream" uid="uid://c3aetabx5pgt8" path="res://assets/music/retro-jump-3-236683.mp3" id="3_txad8"]
+[ext_resource type="AudioStream" uid="uid://bgfjswrnggm3" path="res://assets/music/coin-recieved-230517.mp3" id="4_li7c4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahx2h"]
-size = Vector2(16, 16)
+size = Vector2(10, 15)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b56kg"]
-radius = 42.3868
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_miofp"]
+size = Vector2(13.1579, 4.60526)
+
+[sub_resource type="Animation" id="Animation_xtfxs"]
+resource_name = "cat_skating"
+length = 0.9
+loop_mode = 2
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.428571, 0.571429, 0.714286),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_0j5au"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_71yh8"]
+resource_name = "cat_jump"
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3it0"]
+_data = {
+"RESET": SubResource("Animation_0j5au"),
+"cat_jump": SubResource("Animation_71yh8"),
+"cat_skating": SubResource("Animation_xtfxs")
+}
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -16,9 +75,12 @@ floor_constant_speed = true
 script = ExtResource("1_bwpes")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_mg7mj")
+texture = ExtResource("2_hmyn6")
+hframes = 6
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_ahx2h")
 
 [node name="ComboArea" type="Area2D" parent="."]
@@ -26,18 +88,30 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComboArea"]
+position = Vector2(0, 9.25)
 scale = Vector2(0.76, 0.76)
-shape = SubResource("CircleShape2D_b56kg")
+shape = SubResource("RectangleShape2D_miofp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(90, -30)
+offset = Vector2(80, -15)
 zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g3it0")
+}
 
 [node name="ComboTimer" type="Timer" parent="."]
+
+[node name="SFX_Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_txad8")
+volume_db = -16.0
+
+[node name="SFX_Score" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_li7c4")
+volume_db = -16.0
 
 [connection signal="area_entered" from="ComboArea" to="." method="_on_combo_area_area_entered"]
 [connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]

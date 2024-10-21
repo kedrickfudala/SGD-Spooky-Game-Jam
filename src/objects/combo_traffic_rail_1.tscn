@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bqibu7376jwub" path="res://assets/sprites/combo objects/yellowblackrail1.png" id="2_dx7jb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8trf0"]
-size = Vector2(16, 5.5)
+size = Vector2(14, 1)
 
 [node name="ComboTrafficRail1" instance=ExtResource("1_ner0o")]
+score_value = 50
+time_value = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_dx7jb")
@@ -15,5 +17,5 @@ texture = ExtResource("2_dx7jb")
 polygon = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, -10.75)
+position = Vector2(1, -8.5)
 shape = SubResource("RectangleShape2D_8trf0")
