@@ -13,12 +13,11 @@ class_name Player
 @onready var combo_timer : Object = $ComboTimer
 
 @onready var score : int = 0
-
 @onready var jumps : int = 2
 
 func _ready():
 	spawn_player_hud()
-	combo_timer.set_wait_time(5)
+	combo_timer.set_wait_time(5999)
 	combo_timer.start()
 	animation_player.play("cat_skating")
 	
