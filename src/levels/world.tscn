@@ -12,28 +12,35 @@ script = ExtResource("1_qjygf")
 scroll_base_scale = Vector2(0.45, 0.45)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(35, 67)
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(512, 256)
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture_repeat = 2
-position = Vector2(202.5, 51.75)
-scale = Vector2(1.83984, 1.83984)
+[node name="SpriteSky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(206, 103)
 texture = ExtResource("2_nyh8e")
+region_rect = Rect2(0, 0, 338.015, 129.625)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(35, 67)
+motion_scale = Vector2(0.35, 0.35)
+motion_mirroring = Vector2(512, 0)
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture_repeat = 2
-position = Vector2(204, 80)
-scale = Vector2(1.84028, 1.86719)
+[node name="SpriteCity" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(119, 23.5)
+scale = Vector2(2, 2)
 texture = ExtResource("3_tjuy5")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(35, 67)
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = -137.0
+offset_top = 151.0
+offset_right = 375.0
+offset_bottom = 1445.0
+color = Color(0.0156863, 0, 0.180392, 1)
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture_repeat = 2
-position = Vector2(206, 81)
-scale = Vector2(1.50148, 1.52344)
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(512, 0)
+
+[node name="SpriteClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(92, 20)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_8fqes")

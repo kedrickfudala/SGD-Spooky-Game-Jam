@@ -14,32 +14,41 @@ class_name Player
 
 @onready var score : int = 0
 @onready var jumps : int = 2
+@onready var drops : int = 1
 
 func _ready():
 	spawn_player_hud()
-	combo_timer.set_wait_time(5999)
+	combo_timer.set_wait_time(5)
 	combo_timer.start()
 	animation_player.play("cat_skating")
 	
 func _physics_process(_delta: float) -> void:
+	camera.position_smoothing_speed = 3 + (world.speed / 100)
 	if world.game_start:
 		if player_hud_inst:
 			player_hud_inst.score_label.text = str("Score: ") + str(score)
 			player_hud_inst.combo_label.text = str("Combo Timer: ") + str(snapped(combo_timer.time_left, 0.1))
 		handle_input()
 		handle_movement()
+		if velocity.x == 0:
+			world.game_over()
 
 func handle_input():
 	if is_on_floor():
 		jumps = 2
 		animation_player.play("cat_skating")
 	if Input.is_action_just_pressed("jump") and jumps > 0:
+		drops = 1
 		sfx_jump.play()
 		animation_player.play("cat_jump")
 		velocity.y = -250
 		jumps -= 1
+	if Input.is_action_just_pressed("drop") and !is_on_floor() and drops > 0:
+		velocity.y = 250
+		drops -= 1
 
 func handle_movement():
+	velocity.x = world.speed
 	velocity.y += 9.8
 	move_and_slide()
 

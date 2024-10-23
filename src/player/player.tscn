@@ -96,7 +96,7 @@ scale = Vector2(0.76, 0.76)
 shape = SubResource("RectangleShape2D_miofp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(80, -15)
+offset = Vector2(100, -30)
 zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
