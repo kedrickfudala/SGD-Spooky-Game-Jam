@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3tfoqcmufkds"]
+
+[ext_resource type="Texture2D" uid="uid://d0w7usunxm22b" path="res://assets/backgrounds/background_for_spooky_game_jamWHOLE.png" id="1_l674o"]
+[ext_resource type="Script" path="res://src/ui/instructions_scene.gd" id="1_mfdya"]
+
+[node name="InstructionsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mfdya")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 793.0
+texture = ExtResource("1_l674o")
+
+[node name="HeaderLabel" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 92.0
+offset_right = 795.0
+offset_bottom = 229.0
+theme_override_font_sizes/font_size = 75
+text = "How to Play"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 280.0
+offset_right = 1118.0
+offset_bottom = 517.0
+theme_override_font_sizes/font_size = 30
+text = "Press 'SPACEBAR' or 'W' to Jump! You can DOUBLE JUMP!
+Press 'SHIFT' or 'S' to Drop Down!
+
+Avoid running into walls to survive!
+Jump on glowing green objects to gain combo score!"
+horizontal_alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="."]
+offset_left = 450.0
+offset_top = 497.0
+offset_right = 699.0
+offset_bottom = 580.0
+theme_override_font_sizes/font_size = 50
+text = "Let's Go!
+"
+
+[connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]

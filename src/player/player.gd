@@ -35,9 +35,7 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	camera.position_smoothing_speed = 3 + (world.speed / 100)
 	if player_hud_inst:
-			player_hud_inst.hud_label.text = str("Press SPACEBAR or W to Jump! You can DOUBLE JUMP!")
-			player_hud_inst.hud_label.text += '\n' + str("Press SHIFT or S to Drop Down!")
-			player_hud_inst.hud_label.text += '\n' + str("Score: ") + str(score)
+			player_hud_inst.hud_label.text = str("Score: ") + str(score)
 			if combo_runout_timer.time_left > 0:
 				player_hud_inst.hud_label.text += '\n' + str("Combo: ") + str(combo)
 				player_hud_inst.hud_label.text += '\n' + str("    Multiplier: ") + str(combo_multiplier)

@@ -4,7 +4,7 @@ class_name MainMenu
 @onready var game_container = get_parent()
 
 func _on_play_button_pressed() -> void:
-	game_container.spawn_world()
+	game_container.spawn_instructions()
 	queue_free()
 
 func _on_credits_button_pressed() -> void:
