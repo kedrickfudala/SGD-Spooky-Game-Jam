@@ -9,7 +9,7 @@ size = Vector2(6, 2)
 [node name="ComboTallTomb" instance=ExtResource("1_5ohmi")]
 position = Vector2(0, -8)
 score_value = 60
-time_value = 3.0
+time_value = 5.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_q1rnx")

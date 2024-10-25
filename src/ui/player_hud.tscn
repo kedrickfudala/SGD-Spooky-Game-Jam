@@ -5,16 +5,10 @@
 [node name="PlayerHud" type="CanvasLayer"]
 script = ExtResource("1_oxxxk")
 
-[node name="ScoreLabel" type="Label" parent="."]
-offset_left = 72.0
-offset_top = 67.0
-offset_right = 112.0
-offset_bottom = 90.0
-text = "score:"
-
-[node name="ComboLabel" type="Label" parent="."]
-offset_left = 74.0
-offset_top = 108.0
-offset_right = 114.0
-offset_bottom = 131.0
-text = "combo: "
+[node name="HudLabel" type="Label" parent="."]
+offset_left = 49.0
+offset_top = 43.0
+offset_right = 141.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 30
+text = "HudText"

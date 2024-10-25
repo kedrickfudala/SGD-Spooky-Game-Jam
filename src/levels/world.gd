@@ -3,6 +3,7 @@ class_name World
 
 @onready var player : PackedScene = preload("res://src/player/player.tscn")
 @onready var player_inst : Object = null
+@onready var sfx_lose : AudioStreamPlayer = $SFX_Lose
 
 @onready var game_start : bool = false
 
@@ -31,7 +32,7 @@ func _ready():
 	game_start = true
 
 func _physics_process(_delta: float) -> void:
-	speed += 0.02
+	speed += 0.05
 	#print(speed)
 
 func spawn_player():
@@ -55,6 +56,7 @@ func spawn_random_level(x_offset : int):
 	spawn_level(num, x_offset)
 
 func game_over():
-	print("game over")
-	game_start = false
-	get_parent().spawn_gameover()
+	if game_start == true:
+		sfx_lose.play()
+		get_parent().spawn_gameover()
+		game_start = false

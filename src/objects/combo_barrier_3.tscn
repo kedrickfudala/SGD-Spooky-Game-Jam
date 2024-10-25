@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://16t5m70xc874" path="res://src/objects/combo_barrier1.tscn" id="1_ihh58"]
 
 [node name="ComboBarrier1" instance=ExtResource("1_ihh58")]
-time_value = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 flip_h = true
@@ -12,4 +11,4 @@ flip_h = true
 polygon = PackedVector2Array(-8, -8, 4, -8, 8, 8, -8, 8, -8, 8, -8, 3)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-2, -8)
+position = Vector2(-2.0625, -8.5)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ogrr1lot1qwv"]
+[gd_scene load_steps=6 format=3 uid="uid://ogrr1lot1qwv"]
 
 [ext_resource type="Script" path="res://src/levels/world.gd" id="1_qjygf"]
 [ext_resource type="Texture2D" uid="uid://cyv5tsy7li84n" path="res://assets/backgrounds/background_for_spooky_game_jamback.png" id="2_nyh8e"]
 [ext_resource type="Texture2D" uid="uid://208b2kwhau7v" path="res://assets/backgrounds/background_for_spooky_game_jam.png" id="3_tjuy5"]
 [ext_resource type="Texture2D" uid="uid://d148ylwnv5acy" path="res://assets/backgrounds/cloud.png" id="4_8fqes"]
+[ext_resource type="AudioStream" uid="uid://c7kghqe0dbecx" path="res://assets/sfx/explosion.wav" id="5_8egje"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_qjygf")
@@ -44,3 +45,7 @@ motion_mirroring = Vector2(512, 0)
 position = Vector2(92, 20)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_8fqes")
+
+[node name="SFX_Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8egje")
+volume_db = -10.0

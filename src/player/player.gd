@@ -6,6 +6,7 @@ class_name Player
 @onready var player_hud : PackedScene = preload("res://src/ui/player_hud.tscn")
 @onready var player_hud_inst : Object = null
 
+@onready var sprite : Object = $Sprite2D
 @onready var camera : Object = $Camera2D
 @onready var animation_player : Object = $AnimationPlayer
 @onready var sfx_jump: AudioStreamPlayer = $SFX_Jump
@@ -17,8 +18,9 @@ class_name Player
 @onready var drops : int = 1
 
 func _ready():
+	sprite.rotation_degrees = 0
 	spawn_player_hud()
-	combo_timer.set_wait_time(5)
+	combo_timer.set_wait_time(10)
 	combo_timer.start()
 	animation_player.play("cat_skating")
 	
@@ -26,11 +28,11 @@ func _physics_process(_delta: float) -> void:
 	camera.position_smoothing_speed = 3 + (world.speed / 100)
 	if world.game_start:
 		if player_hud_inst:
-			player_hud_inst.score_label.text = str("Score: ") + str(score)
-			player_hud_inst.combo_label.text = str("Combo Timer: ") + str(snapped(combo_timer.time_left, 0.1))
+			player_hud_inst.hud_label.text = str("Press SPACEBAR or W to Jump! You can DOUBLE JUMP!") + '\n' + str("Score: ") + str(score) + '\n' + str("Combo Timer: ") + str(snapped(combo_timer.time_left, 0.1))
 		handle_input()
 		handle_movement()
 		if velocity.x == 0:
+			sprite.rotation_degrees = -90
 			world.game_over()
 
 func handle_input():
@@ -44,7 +46,7 @@ func handle_input():
 		velocity.y = -250
 		jumps -= 1
 	if Input.is_action_just_pressed("drop") and !is_on_floor() and drops > 0:
-		velocity.y = 250
+		velocity.y = 100
 		drops -= 1
 
 func handle_movement():
