@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxcvghf30oaod"]
+
+[ext_resource type="Script" path="res://src/ui/game_over_ui.gd" id="1_vuneq"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = ExtResource("1_vuneq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 300.0
+offset_top = 121.0
+offset_right = 839.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 100
+text = "Game Over!"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 411.0
+offset_top = 279.0
+offset_right = 749.0
+offset_bottom = 392.0
+theme_override_font_sizes/font_size = 76
+text = "Restart"
+
+[node name="MainMenuButton" type="Button" parent="."]
+offset_left = 393.0
+offset_top = 428.0
+offset_right = 774.0
+offset_bottom = 541.0
+theme_override_font_sizes/font_size = 76
+text = "Main Menu"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
