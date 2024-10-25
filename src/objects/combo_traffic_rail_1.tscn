@@ -7,8 +7,8 @@
 size = Vector2(16, 1)
 
 [node name="ComboTrafficRail1" instance=ExtResource("1_ner0o")]
-score_value = 50
-time_value = 2.0
+score_value = 10
+time_value = 1.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_dx7jb")

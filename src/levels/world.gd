@@ -26,14 +26,12 @@ class_name World
 func _ready():
 	spawn_player()
 	spawn_level(0, 0)
-	#spawn_random_level(1 * 512)
 	spawn_level(2, 1 * 512)
 	spawn_random_level(2 * 512)
 	game_start = true
 
 func _physics_process(_delta: float) -> void:
 	speed += 0.05
-	#print(speed)
 
 func spawn_player():
 	player_inst = player.instantiate()
@@ -56,7 +54,6 @@ func spawn_random_level(x_offset : int):
 	spawn_level(num, x_offset)
 
 func game_over():
-	if game_start == true:
-		sfx_lose.play()
-		get_parent().spawn_gameover()
-		game_start = false
+	sfx_lose.play()
+	get_parent().spawn_gameover()
+	game_start = false

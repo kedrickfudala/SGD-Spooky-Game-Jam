@@ -13,11 +13,13 @@ grow_vertical = 2
 script = ExtResource("1_6r8lc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 793.0
 texture = ExtResource("1_y1qyg")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 327.0
 offset_top = 101.0
 offset_right = 1179.0
@@ -31,6 +33,7 @@ Irene Si
 Mike Villanueva Najarro"
 
 [node name="BackButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 454.0
 offset_top = 426.0
 offset_right = 703.0

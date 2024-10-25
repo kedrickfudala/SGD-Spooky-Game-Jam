@@ -8,8 +8,8 @@ size = Vector2(32, 2)
 
 [node name="ComboTrafficDivider" instance=ExtResource("1_urbb3")]
 position = Vector2(8, 0)
-score_value = 40
-time_value = 2.0
+score_value = 20
+time_value = 1.0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(16, -24)

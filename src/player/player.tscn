@@ -106,7 +106,11 @@ libraries = {
 "": SubResource("AnimationLibrary_g3it0")
 }
 
-[node name="ComboTimer" type="Timer" parent="."]
+[node name="ScoreCounterTimer" type="Timer" parent="."]
+
+[node name="ComboCounterTimer" type="Timer" parent="."]
+
+[node name="ComboRunoutTimer" type="Timer" parent="."]
 
 [node name="SFX_Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_txad8")
@@ -117,4 +121,6 @@ stream = ExtResource("4_li7c4")
 volume_db = -16.0
 
 [connection signal="area_entered" from="ComboArea" to="." method="_on_combo_area_area_entered"]
-[connection signal="timeout" from="ComboTimer" to="." method="_on_combo_timer_timeout"]
+[connection signal="timeout" from="ScoreCounterTimer" to="." method="_on_score_counter_timer_timeout"]
+[connection signal="timeout" from="ComboCounterTimer" to="." method="_on_combo_counter_timer_timeout"]
+[connection signal="timeout" from="ComboRunoutTimer" to="." method="_on_combo_runout_timer_timeout"]

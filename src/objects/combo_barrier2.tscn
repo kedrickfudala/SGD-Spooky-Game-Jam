@@ -7,8 +7,8 @@
 size = Vector2(16, 1)
 
 [node name="ComboBarrier2" instance=ExtResource("1_5qpcw")]
-score_value = 40
-time_value = 1.0
+score_value = 10
+time_value = 0.5
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_nexwc")

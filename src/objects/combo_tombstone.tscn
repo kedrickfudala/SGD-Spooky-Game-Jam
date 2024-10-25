@@ -7,8 +7,8 @@
 size = Vector2(8, 2)
 
 [node name="ComboTombstone" instance=ExtResource("1_j5yva")]
-score_value = 60
-time_value = 3.0
+score_value = 30
+time_value = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_3pqmw")

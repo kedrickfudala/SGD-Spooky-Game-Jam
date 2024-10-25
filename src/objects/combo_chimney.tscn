@@ -7,8 +7,8 @@
 size = Vector2(8, 1)
 
 [node name="ComboChimney" instance=ExtResource("1_wwppn")]
-score_value = 70
-time_value = 6.0
+score_value = 30
+time_value = 2.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_ie7l2")
